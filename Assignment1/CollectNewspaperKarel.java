@@ -11,7 +11,46 @@
 import stanford.karel.*;
 
 public class CollectNewspaperKarel extends SuperKarel {
-
-	// You fill in this part
-
+	
+	public void run() {
+		/* move();
+		turnRight();
+		move();
+		turnLeft();
+		move();
+		move();
+		pickBeeper();
+		*/
+		MoveToNewspaper();
+		PickItUp();
+		ReturnToStart();
+	}
+	
+	// move to the newspaper coordinates
+	private void MoveToNewspaper() {
+		move();
+		move();
+		turnRight();
+		move();
+		turnLeft();
+		move();
+	}
+	
+	// if there's any beeper in this grid, pick it up.
+	private void PickItUp() {
+		if (beepersPresent()) {
+			pickBeeper();
+		}
+	}
+		
+	private void ReturnToStart() {
+		turnAround();
+		move();
+		turnRight();
+		move();
+		turnLeft();
+		move();
+		move();
+		turnAround();
+	}
 }
